@@ -2,7 +2,7 @@
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class SimpleItemSheet extends ItemSheet {
+export class TORItemSheet extends ItemSheet {
 
   /** @override */
 	static get defaultOptions() {
@@ -20,10 +20,9 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
   getData() {
     const data = super.getData();
-    data.dtypes = ["String", "Number", "Boolean", "Formula", "Resource"];
+    data.dtypes = ["String", "Number", "Boolean"];
     for ( let attr of Object.values(data.data.attributes) ) {
       attr.isCheckbox = attr.dtype === "Boolean";
-      attr.isResource = attr.dtype === "Resource";
     }
     return data;
   }
@@ -68,15 +67,9 @@ export class SimpleItemSheet extends ItemSheet {
 
     // Add new attribute
     if ( action === "create" ) {
-      const objKeys = Object.keys(attrs);
-      let nk = Object.keys(attrs).length + 1;
-      let newValue = `attr${nk}`;
+      const nk = Object.keys(attrs).length + 1;
       let newKey = document.createElement("div");
-      while ( objKeys.includes(newValue) ) {
-        ++nk;
-        newValue = `attr${nk}`;
-      }
-      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="${newValue}"/>`;
+      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="attr${nk}"/>`;
       newKey = newKey.children[0];
       form.appendChild(newKey);
       await this._onSubmit(event);
@@ -104,7 +97,7 @@ export class SimpleItemSheet extends ItemSheet {
       obj[k] = v;
       return obj;
     }, {});
-
+    
     // Remove attributes which are no longer used
     for ( let k of Object.keys(this.object.data.data.attributes) ) {
       if ( !attributes.hasOwnProperty(k) ) attributes[`-=${k}`] = null;

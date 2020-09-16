@@ -1,0 +1,246 @@
+@font-face {
+  font-family: carolingia;
+  src: url("carolingia.ttf");
+}
+@font-face {
+  font-family: dumbledore;
+  src: url("dumbledore.ttf")
+}
+.torrpg {
+  font-family: dumbledore;
+  font-size: 16px;
+  /* Sheet Tabs */
+  /* Items List */
+  /* Attributes */
+}
+.torrpg .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: hidden;
+}
+.torrpg .sheet-header {
+  height: 170px;
+  width: 85%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+.torrpg .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+}
+.torrpg .sheet-header .header-fields {
+  flex: 1;
+  height: 170px;
+}
+.torrpg .sheet-header h1.charname {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.torrpg .sheet-header h1.charname input {
+  width: 100%;
+  text-align: left;
+  border-width: 0;
+  border-bottom: 1px solid black;
+}
+.torrpg .details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.torrpg .details label {
+  border-width: 0;
+  margin: 5px 3px 0px 0px;
+  padding-top: 3px;
+}
+.torrpg .details input {
+  width: 30%;
+  border-width: 0;
+  border-bottom: 1px solid black;
+  padding-bottom: 1px;
+  margin: 5px 10px 5px 0px;
+}
+.torrpg .long-details {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  text-align: left;
+}
+.torrpg .long-details label {
+  border-width: 0;
+  padding-top: 3px;
+  margin: 5px 3px 0px 0px;
+}
+.torrpg .long-details input {
+  width: 75%;
+  border-width: 0;
+  border-bottom: 1px solid black;
+  padding-bottom: 1px;
+  margin: 5px 0px 5px 0px;
+}
+.torrpg .sheet-body {
+  background-color: cadetblue;
+  width: 85%;
+  height: 200px;
+  overflow: hidden;
+}
+.torrpg .traits {
+  flex: 1;
+  height: 100px;
+  background-color: thistle;
+}
+.torrpg .sheet-body h2.traits-header {
+  border-bottom: 0px;
+  text-align: center;
+}
+.torrpg .sheet-body .attributes-body {
+  flex: 1;
+  position: relative;
+  height: 100px;
+  border-width: 0px;
+  background-color: burlywood;
+}
+.torrpg .sheet-body .attributes-body img {
+  border-width: 0px;
+  margin-top: -10px;
+  top: 0;
+  left: 0;
+}
+.torrpg .sheet-body .attributes-body label {
+  background-color: azure;
+  font-size: 20px;
+  margin: 0px 30px 0px 20px
+}
+.torrpg .sheet-body .attributes-body input {
+  background-color: aquamarine;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 1;
+  left: 1;
+  margin-left: 18px;
+  margin-top: 25px;
+}
+/*
+.torrpg .tabs {
+  height: 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+.torrpg .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+.torrpg .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.torrpg .sheet-body {
+  overflow: hidden;
+}
+.torrpg .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
+}
+.torrpg .editor,
+.torrpg .editor-content {
+  height: 100%;
+}
+.torrpg .item-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+.torrpg .item-list .item {
+  min-height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #BBB;
+  align-items: stretch;
+}
+.torrpg .item-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
+}
+.torrpg .item-list .item-name {
+  margin: 0;
+}
+.torrpg .item-list .item-controls {
+  flex: 0 0 36px;
+}
+.torrpg .item-list .item-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex: 2;
+  justify-content: flex-start;
+}
+.torrpg .item-list .item-button {
+  line-height: 1;
+  font-size: 11px;
+  flex: none;
+  width: auto;
+}
+.torrpg .attributes-header {
+  padding: 5px;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: bold;
+}
+.torrpg .attributes-header .attribute-label {
+  flex: 1.5;
+}
+.torrpg .attributes-header .attribute-control {
+  flex: 0 0 20px;
+}
+.torrpg .attributes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.torrpg .attributes-list li > * {
+  margin: 0 3px;
+  height: 28px;
+  line-height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #AAA;
+}
+.torrpg .attributes-list a.attribute-control {
+  flex: 0 0 20px;
+  text-align: center;
+  line-height: 28px;
+  border: none;
+}
+.torrpg .attributes-list .attribute-col label {
+  font-size: 10px;
+  text-align: center;
+  line-height: 1;
+}
+.torrpg .attributes-list .attribute-col input {
+  font-size: 11px;
+  text-align: center;
+  line-height: 1;
+  height: 50%;
+}
+*/
+.torrpg.sheet.actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.torrpg.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}

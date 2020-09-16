@@ -2,15 +2,15 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class SimpleActorSheet extends ActorSheet {
+export class ActorSheetTORRPG extends ActorSheet {
 
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-  	  classes: ["worldbuilding", "sheet", "actor"],
-  	  template: "systems/worldbuilding/templates/actor-sheet.html",
-      width: 600,
-      height: 600,
+  	  classes: ["torrpg", "sheet", "actor"],
+  	  template: "systems/torrpg/templates/pc-sheet.html",
+      width: 800,
+      height: 900,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
@@ -21,12 +21,7 @@ export class SimpleActorSheet extends ActorSheet {
   /** @override */
   getData() {
     const data = super.getData();
-    data.dtypes = ["String", "Number", "Boolean", "Formula", "Resource"];
-    for ( let attr of Object.values(data.data.attributes) ) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-      attr.isResource = attr.dtype === "Resource";
-    }
-    data.shorthand = !!game.settings.get("worldbuilding", "macroShorthand");
+    data.dtypes = ["String", "Number", "Boolean"];
     return data;
   }
 
@@ -35,19 +30,6 @@ export class SimpleActorSheet extends ActorSheet {
   /** @override */
 	activateListeners(html) {
     super.activateListeners(html);
-
-    // Handle rollable attributes.
-    html.find('.items .rollable').click(ev => {
-      let button = $(ev.currentTarget);
-      let r = new Roll(button.data('roll'), this.actor.getRollData());
-      const li = button.parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
-      r.roll().toMessage({
-        user: game.user._id,
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: `<h2>${item.name}</h2><h3>${button.text()}</h3>`
-      });
-    });
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
@@ -97,15 +79,9 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Add new attribute
     if ( action === "create" ) {
-      const objKeys = Object.keys(attrs);
-      let nk = Object.keys(attrs).length + 1;
-      let newValue = `attr${nk}`;
+      const nk = Object.keys(attrs).length + 1;
       let newKey = document.createElement("div");
-      while ( objKeys.includes(newValue) ) {
-        ++nk;
-        newValue = `attr${nk}`;
-      };
-      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="${newValue}"/>`;
+      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="attr${nk}"/>`;
       newKey = newKey.children[0];
       form.appendChild(newKey);
       await this._onSubmit(event);
@@ -133,7 +109,7 @@ export class SimpleActorSheet extends ActorSheet {
       obj[k] = v;
       return obj;
     }, {});
-
+    
     // Remove attributes which are no longer used
     for ( let k of Object.keys(this.object.data.data.attributes) ) {
       if ( !attributes.hasOwnProperty(k) ) attributes[`-=${k}`] = null;
@@ -144,7 +120,7 @@ export class SimpleActorSheet extends ActorSheet {
       obj[e[0]] = e[1];
       return obj;
     }, {_id: this.object._id, "data.attributes": attributes});
-
+    
     // Update the Actor
     return this.object.update(formData);
   }
