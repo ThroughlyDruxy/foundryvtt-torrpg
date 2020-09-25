@@ -1,0 +1,112 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+        <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
+          <div class="details">
+            <label>Culture:</label>
+            <input type="text" name="data.details.culture" value="{{data.details.culture}}" data-dtype="text"/>
+            <label>Standard of Living:</label>
+            <input type="text" name="data.details.standlive" value="{{data.details.standlive}}" data-dtype="text"/>
+          </div>
+          <div class="long-details">
+            <label>Cultural Blessing:</label>
+            <input type="text" name="data.details.culbless" value="{{data.details.culbless}}" data-dtype="text"/>
+          </div>
+          <div class="details">
+            <label>Calling:</label>
+            <input type="text" name="data.details.calling" value="{{data.details.calling}}" data-dtype="text"/>
+            <label>Shadow Weakness:</label>
+            <input type="text" name="data.details.shadweak" value="{{data.details.shadweak}}" data-dtype="text"/>
+          </div>
+        </div>
+      </div>
+<!--
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="description">Description</a>
+        <a class="item" data-tab="items">Items</a>
+        <a class="item" data-tab="attributes">Attributes</a>
+    </nav>
+  -->
+    {{!-- Sheet Body --}}
+    <div class="sheet-body">
+
+      <div class="traits">
+        <h2 class="traits-header">- Traits -</h2>
+        <div class="long-details">
+          <label>Specialties:</label>
+          <input type="text" name="data.traits.specialties" value="{{data.traits.specialties}}" data-dtype="text"/>
+          <label>Distinctive Features:</label>
+          <input type="text" name="data.traits.distfeat" value="{{data.traits.distfeat}}" data-dtype="text"/>
+        </div>
+      </div>
+      <div class="attributes-body">
+        <h2 class="traits-header">- Attributes -</h2>
+        <div class="attributes-body">
+          <label>Body</label>
+          <input type="text" name="data.abilities.body.unfavoured" value="{{data.abilities.body.unfavoured}}" data-dtype="number"/>
+          <img class="attribute-img" src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="100" width="100">
+          <label>Heart</label>
+          <input type="text" name="data.abilities.heart.unfavoured" value="{{data.abilities.heart.unfavoured}}" data-dtype="number"/>
+          <img class="attribute-img" src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="100" width="100">
+          <label>Wits</label>
+          <input type="text" name="data.abilities.wits.unfavoured" value="{{data.abilities.wits.unfavoured}}" data-dtype="number"/>
+          <img class="attribute-img" src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="100" width="100">
+        </div>
+      </div>
+
+    </div>
+
+
+      <!--
+        {{!-- Biography Tab --}}
+        <div class="tab biography" data-group="primary" data-tab="description">
+            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        </div>
+
+        {{!-- Owned Items Tab --}}
+        <div class="tab items" data-group="primary" data-tab="items">
+            <ol class="item-list">
+            {{#each actor.items as |item id|}}
+                <li class="item flexrow" data-item-id="{{item._id}}">
+                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
+                    <h4 class="item-name">{{item.name}}</h4>
+                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
+                    <div class="item-buttons">
+                      {{#each item.data.attributes as |itemAttr key|}}
+                        {{#if (eq itemAttr.dtype "Formula")}}
+                          {{!-- Use the items.name.key format for shorthand. --}}
+                          {{#if ../../shorthand}}
+                            <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                          {{!-- Use the items.name.attributes.key.value format otherwise. --}}
+                          {{else}}
+                            <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" title="{{itemAttr.value}}">{{itemAttr.label}}</button>
+                          {{/if}}
+                        {{/if}}
+                      {{/each}}
+                    </div>
+                    <div class="item-controls">
+                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
+                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
+                    </div>
+                </li>
+            {{/each}}
+            </ol>
+        </div>
+
+        {{!-- Attributes Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            <header class="attributes-header flexrow">
+                <span class="attribute-key">Attribute Key</span>
+                <span class="attribute-value">Value</span>
+                <span class="attribute-label">Label</span>
+                <span class="attribute-dtype">Data Type</span>
+                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
+            </header>
+
+        </div>
+      -->
+</form>

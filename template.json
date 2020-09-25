@@ -1,166 +1,322 @@
 {
 "Actor": {
-  "types": ["character"],
+  "types": [
+    "pc",
+    "enemy",
+    "friendly"
+  ],
   "templates": {
     "common": {
-      "details": {
-        "name": "",
-        "culture": "",
-        "standlive": "",
-        "culbless": "",
-        "calling": "",
-        "shadweak": ""
+      "endurance": {
+        "value": 0,
+        "min": 0,
+        "max": 0
       },
-      "traits": {
-        "specialities": "",
-        "distfeat": ""
+      "weary": false,
+      "wounded": false,
+      "protection": {
+        "armour": 0,
+        "helm": 0,
+        "favoured": false
       },
-      "attributes": {
-        "body": {
-          "unfavoured": 0,
-          "favoured": 0
-        },
-        "heart": {
-          "unfavoured": 0,
-          "favoured": 0
-        },
-        "wits": {
-          "unfavoured": 0,
-          "favoured": 0
-        }
+      "parry": {
+        "base": 0,
+        "shield": 0,
+        "total": 0
       },
-      "commskills": {
-        "awe": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "ath": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "aware": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "explore": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "song": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "craft": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "inspire": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "travel": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "insight": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "healing": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "courtesy": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "battle": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "persuade": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "stealth": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "search": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "hunting": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "riddle": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        },
-        "lore": {
-          "ranks": 0,
-          "max": 6,
-          "favoured": false
-        }
-      },
-      "skillgroups": {
+      "skillgrps": {
         "personality": {
-          "advpoints": 0,
+          "value": 0,
+          "favoured": false,
           "max": 3
         },
         "movement": {
-          "advpoints": 0,
+          "value": 0,
+          "favoured": false,
           "max": 3
         },
         "perception": {
-          "advpoints": 0,
+          "value": 0,
+          "favoured": false,
           "max": 3
         },
         "survival": {
-          "advpoints": 0,
+          "value": 0,
+          "favoured": false,
           "max": 3
         },
         "custom": {
-          "advpoints": 0,
+          "value": 0,
+          "favoured": false,
           "max": 3
         },
         "vocation": {
-          "advpoints": 0,
+          "value": 0,
+          "favoured": false,
           "max": 3
         }
       },
-      "expvalwis": {
-        "exp": {
-          "unspent": 0,
-          "total": 0
+      "weapskills": {
+        "weap1": {
+          "name": "",
+          "ranks": 0,
+          "favoured": false
         },
-        "val": 0,
-        "wis": 0
+        "weap2": {
+          "name": "",
+          "ranks": 0,
+          "favoured": false
+        },
+        "weap3": {
+          "name": "",
+          "ranks": 0,
+          "favoured": false
+        },
+        "weap4": {
+          "name": "",
+          "ranks": 0,
+          "favoured": false
+        },
+        "weap5": {
+          "name": "",
+          "ranks": 0,
+          "favoured": false
+        },
+        "weap6": {
+          "name": "",
+          "ranks": 0,
+          "favoured": false
+        }
+      },
+      "weapstats": {
+        "weapstat1": {
+          "name": "",
+          "damage": 0,
+          "edge": 0,
+          "injury": 0,
+          "enc": 0
+        },
+        "weapstat2": {
+          "name": "",
+          "damage": 0,
+          "edge": 0,
+          "injury": 0,
+          "enc": 0
+        },
+        "weapstat3": {
+          "name": "",
+          "damage": 0,
+          "edge": 0,
+          "injury": 0,
+          "enc": 0
+        }
+      }
+    },
+    "cr": {
+      "cr": 0
+    },
+    "traits": {
+      "specialties": "",
+      "distfeat": ""
+    },
+    "mount": {
+      "mount": {
+        "name": "",
+        "type": "",
+        "size": "",
+        "mod": 0,
+        "charge": 0,
+        "armred": 0,
+        "qualities": ""
+      }
+    },
+    "specabil": {
+      "specabil": ""
+    },
+    "hope": {
+      "hope": {
+      "value": 0,
+      "max": 0,
+      "shad": 0
       }
     }
+  },
+  "pc": {
+    "templates": [
+      "common",
+      "traits",
+      "mount",
+      "hope"
+    ],
+    "attributes": {},
+    "details": {
+      "culture": "",
+      "standlive": "",
+      "culbless": "",
+      "calling": "",
+      "shadweak": ""
+    },
+    "abilities": {
+      "body": {
+        "unfavoured": 0,
+        "favoured": 0
+      },
+      "heart": {
+        "unfavoured": 0,
+        "favoured": 0
+      },
+      "wits": {
+        "unfavoured": 0,
+        "favoured": 0
+      }
+    },
+   "commskills": {
+      "awe": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "ath": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "aware": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "explore": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "song": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "craft": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "inspire": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "travel": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "insight": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "healing": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "courtesy": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "battle": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "persuade": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "stealth": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "search": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "hunting": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "riddle": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "lore": {
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      }
+    },
+    "rewards": {
+      "reward1": "",
+      "reward2": "",
+      "reward3": "",
+      "reward4": "",
+      "reward5": ""
+    },
+    "virtues": {
+      "virtue1": "",
+      "virtue2": "",
+      "virtue3": "",
+      "virtue4": "",
+      "virtue5": ""
+    },
+    "expvalwis": {
+      "exp": {
+        "total": 0,
+        "unspent": 0
+      },
+      "val": 0,
+      "wis": 0
+    },
+    "chardamage": {
+      "base": 0,
+      "ranged": 0
+    },
+    "enc": {
+      "max": 0,
+      "value": 0
+    }
+  },
+  "enemy": {
+    "templates": [
+      "common",
+      "cr",
+      "specabil"
+    ],
+    "attributes": {},
+    "hate": {
+      "value": 0,
+      "min": 0,
+      "max": 0
+    }
+  },
+  "friendly": {
+    "templates": [
+      "common",
+      "cr",
+      "specabil",
+      "mount",
+      "hope"
+    ],
+    "attributes": {}
   }
 },
-  "character": {
-    "templates": ["common"]
-  },
   "Item": {
     "types": ["item"],
     "item": {
