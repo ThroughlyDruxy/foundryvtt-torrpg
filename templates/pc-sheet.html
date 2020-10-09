@@ -1,41 +1,41 @@
 <form class="{{cssClass}}" autocomplete="off">
 
-    {{!-- Sheet Header --}}
-    <div class="sheet-header">
-      <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100">
-      <div class="header-fields">
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"></h1>
-        <div class="details">
-          <label>Culture:</label>
-          <input type="text" name="data.details.culture" value="{{data.details.culture}}" data-dtype="text">
-          <label>Standard of Living:</label>
-          <input type="text" name="data.details.standlive" value="{{data.details.standlive}}" data-dtype="text">
-        </div>
-        <div class="long-details">
-          <label>Cultural Blessing:</label>
-          <input type="text" name="data.details.culbless" value="{{data.details.culbless}}" data-dtype="text">
-        </div>
-        <div class="details">
-          <label>Calling:</label>
-          <input type="text" name="data.details.calling" value="{{data.details.calling}}" data-dtype="text"/>
-          <label>Shadow Weakness:</label>
-          <input type="text" name="data.details.shadweak" value="{{data.details.shadweak}}" data-dtype="text"/>
-        </div>
+  {{!-- Sheet Header --}}
+  <div class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100">
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"></h1>
+      <div class="details">
+        <label>Culture:</label>
+        <input type="text" name="data.details.culture" value="{{data.details.culture}}" data-dtype="text">
+        <label>Standard of Living:</label>
+        <input type="text" name="data.details.standlive" value="{{data.details.standlive}}" data-dtype="text">
+      </div>
+      <div class="long-details">
+        <label>Cultural Blessing:</label>
+        <input type="text" name="data.details.culbless" value="{{data.details.culbless}}" data-dtype="text">
+      </div>
+      <div class="details">
+        <label>Calling:</label>
+        <input type="text" name="data.details.calling" value="{{data.details.calling}}" data-dtype="text"/>
+        <label>Shadow Weakness:</label>
+        <input type="text" name="data.details.shadweak" value="{{data.details.shadweak}}" data-dtype="text"/>
       </div>
     </div>
-    <div class="exp-val-wis">
-      <label class="caption">Experience</label>
-      <input class="exp" type="text" name="data.expvalwis.exp.unspent" value="{{data.expvalwis.exp.unspent}}" data-dtype="number">
-      <label class="tot">Total</label>
-      <input class="totexp" type="text" name="data.expvalwis.exp.total" value="{{data.expvalwis.exp.total}}" data-dtype="number">
-      <img src="systems/torrpg/styles/diamond_2_circles.png" alt="circles" height="100" width="100">
-      <label class="caption">Valour</label>
-      <input class="val" type="text" name="data.expvalwis.val" value="{{data.expvalwis.val}}" data-dtype="number">
-      <img src="systems/torrpg/styles/diamond_circle.png" alt="circles" height="100" width="100">
-      <label class="caption">Wisdom</label>
-      <input class="wis" type="text" name="data.expvalwis.exp.wis" value="{{data.expvalwis.wis}}" data-dtype="number">
-      <img src="systems/torrpg/styles/diamond_circle.png" alt="circles" height="100" width="100">
-    </div>
+  </div>
+  <div class="exp-val-wis">
+    <label class="caption">Experience</label>
+    <input class="exp" type="text" name="data.expvalwis.exp.unspent" value="{{data.expvalwis.exp.unspent}}" data-dtype="number">
+    <label class="tot">Total</label>
+    <input class="totexp" type="text" name="data.expvalwis.exp.total" value="{{data.expvalwis.exp.total}}" data-dtype="number">
+    <img src="systems/torrpg/styles/diamond_2_circles.png" alt="circles" height="100" width="100">
+    <label class="caption">Valour</label>
+    <input class="val" type="text" name="data.expvalwis.val" value="{{data.expvalwis.val}}" data-dtype="number">
+    <img src="systems/torrpg/styles/diamond_circle.png" alt="circles" height="100" width="100">
+    <label class="caption">Wisdom</label>
+    <input class="wis" type="text" name="data.expvalwis.exp.wis" value="{{data.expvalwis.wis}}" data-dtype="number">
+    <img src="systems/torrpg/styles/diamond_circle.png" alt="circles" height="100" width="100">
+  </div>
 <!--
     {{!-- Sheet Tab Navigation --}}
     <nav class="sheet-tabs tabs" data-group="primary">
@@ -49,44 +49,55 @@
   Attributes section
 -->
 
-    <div>
-      <h2 class="cat-header-partial">- Traits -</h2>
+  <div>
+    <h2 class="cat-header-partial">- Traits -</h2>
+  </div>
+  <div class="traits-body">
+    <div class="long-details">
+      <label>Specialties:</label>
+      <input type="text" name="data.specialties" value="{{data.specialties}}" data-dtype="text"/><br>
+      <label>Distinctive Features:</label>
+      <input type="text" name="data.distfeat" value="{{data.distfeat}}" data-dtype="text"/>
     </div>
-    <div class="traits-body">
-      <div class="long-details">
-        <label>Specialties:</label>
-        <input type="text" name="data.specialties" value="{{data.specialties}}" data-dtype="text"/><br>
-        <label>Distinctive Features:</label>
-        <input type="text" name="data.distfeat" value="{{data.distfeat}}" data-dtype="text"/>
-      </div>
-    </div>
-    <div>
-      <h2 class="cat-header-partial">- Attributes -</h2>
-    </div>
-    <div class="attributes-body">
-      <label>Body</label>
-      <input class="unfav-attrib" type="text" name="data.abilities.body.unfavoured" value="{{data.abilities.body.unfavoured}}" data-dtype="number"/>
-      <input class="fav-attrib" type="text" name="data.abilities.body.favoured" value="{{data.abilities.body.favoured}}" data-dtype="number"/>
-      <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
-      <label>Heart</label>
-      <input class="unfav-attrib" type="text" name="data.abilities.heart.unfavoured" value="{{data.abilities.heart.unfavoured}}" data-dtype="number"/>
-      <input class="fav-attrib" type="text" name="data.abilities.heart.favoured" value="{{data.abilities.heart.favoured}}" data-dtype="number"/>
-      <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
-      <label>Wits</label>
-      <input class="unfav-attrib" type="text" name="data.abilities.wits.unfavoured" value="{{data.abilities.wits.unfavoured}}" data-dtype="number"/>
-      <input class="fav-attrib" type="text" name="data.abilities.wits.favoured" value="{{data.abilities.wits.favoured}}" data-dtype="number"/>
-      <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
-    </div>
+  </div>
+  <div>
+    <h2 class="cat-header-partial">- Attributes -</h2>
+  </div>
+  <div class="attributes-body">
+    <label>Body</label>
+    <input class="unfav-attrib" type="text" name="data.abilities.body.unfavoured" value="{{data.abilities.body.unfavoured}}" data-dtype="number"/>
+    <input class="fav-attrib" type="text" name="data.abilities.body.favoured" value="{{data.abilities.body.favoured}}" data-dtype="number"/>
+    <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
+    <label>Heart</label>
+    <input class="unfav-attrib" type="text" name="data.abilities.heart.unfavoured" value="{{data.abilities.heart.unfavoured}}" data-dtype="number"/>
+    <input class="fav-attrib" type="text" name="data.abilities.heart.favoured" value="{{data.abilities.heart.favoured}}" data-dtype="number"/>
+    <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
+    <label>Wits</label>
+    <input class="unfav-attrib" type="text" name="data.abilities.wits.unfavoured" value="{{data.abilities.wits.unfavoured}}" data-dtype="number"/>
+    <input class="fav-attrib" type="text" name="data.abilities.wits.favoured" value="{{data.abilities.wits.favoured}}" data-dtype="number"/>
+    <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
+  </div>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="front">Front</a>
+    <a class="item" data-tab="back">Back</a>
+  </nav>
+
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
 
 <!--
   Common skills section
 -->
-
-    <div class="cat-header-full">
+  {{!-- Front --}}
+  <div class="tab front" data-group="primary" data-tab="front">
+    <div class="cat-header-full" data-group="primary" data-tab="front">
       <h2 class="comskil-head">- Common Skills -</h2>
       <h2 class="skilgrp-head">- Skill Groups -</h2>
     </div>
-    <div>
+    <div data-group="primary" data-tab="front">
       <table class="comskil-table">
         <tr>
           <!--Awe-->
@@ -177,7 +188,7 @@
     <!--
       Skill groups
     -->
-    <div>
+    <div data-group="primary" data-tab="front">
       <table class="skilgrp-table">
         <!-- personality -->
         <tr>
@@ -212,10 +223,10 @@
       </table>
     </div>
 
-    <div>
+    <div data-group="primary" data-tab="front">
       <h2 class="cat-header-partial">- Weapon Skills -</h2>
     </div>
-    <div>
+    <div data-group="primary" data-tab="front">
       <table class="weapskil-table">
         <tr>
           <!-- Weapon 1 -->
@@ -247,7 +258,7 @@
         </tr>
       </table>
     </div>
-    <div class="dam-par-arm">
+    <div class="dam-par-arm" data-group="primary" data-tab="front">
       <label class="caption">Damage</label>
       <input class="dam" type="text" name="data.chardamage.base" value="{{data.chardamage.base}}" data-dtype="number"/>
       <label class="ranged">Ranged</label>
@@ -267,11 +278,11 @@
 
     <!-- Rewards and Virtues -->
 
-    <div class="cat-header-partial">
+    <div class="cat-header-partial" data-group="primary" data-tab="front">
       <h2 class="rew-head">- Rewards -</h2>
       <h2 class="virt-head">- Virtues -</h2>
     </div>
-    <div class="reward-virtue">
+    <div class="reward-virtue" data-group="primary" data-tab="front">
       <table class="rew-table">
         <tr>
           <td><input class="rew-virt" type="text" name="data.rewards.reward1" value="{{data.rewards.reward1}}" data-dtype="text"></td>
@@ -310,10 +321,10 @@
 
     <!-- Gear -->
 
-    <div>
+    <div data-group="primary" data-tab="front">
       <h2 class="cat-header-partial">- Gear -</h2>
     </div>
-    <div>
+    <div data-group="primary" data-tab="front">
       <table class="weapgear-table">
         <tr>
           <!-- weapon 1-->
@@ -357,15 +368,76 @@
       </table>
     </div>
 
+    <div class="other-gear" data-group="primary" data-tab="front">
+      <table>
+        <tr>
+          <td><label>armour</label></td>
+          <td><input class="name" type="text" name="data.gear.armname" value="{{data.gear.armname}}" data-dtype="text"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.armenc" value="{{data.gear.armenc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td><label>headgear</label></td>
+          <td><input class="name" type="text" name="data.gear.helmname" value="{{data.gear.helmname}}" data-dtype="text"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.helmenc" value="{{data.gear.helmenc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td><label>shield</label></td>
+          <td><input class="name" type="text" name="data.gear.shieldname" value="{{data.gear.shieldname}}" data-dtype="text"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.shieldenc" value="{{data.gear.shieldenc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input class="name" type="text" name="data.gear.misc1name" value="{{data.gear.misc1name}}" data-dtype="text" placeholder="misc"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.misc1enc" value="{{data.gear.misc1enc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input class="name" type="text" name="data.gear.misc2name" value="{{data.gear.misc2name}}" data-dtype="text" placeholder="misc"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.misc2enc" value="{{data.gear.misc2enc}}" data-dtype="number"/></td>
+        </tr>
+      </table>
+    </div>
+    <div class="endhope-caption" data-group="primary" data-tab="front">
+      <label>Endurance<label>
+      <label>Hope</label>
+    </div>
+    <div class="end-hope" data-group="primary" data-tab="front">
+      <label class="end-max">Max</label>
+      <label class="fatigue">Fatigue</label>
+      <img src="systems/torrpg/styles/diamond_3_circles.png" alt="circles" height="100" width="100">
+      <label class="hope-max">Max</label>
+      <img src="systems/torrpg/styles/diamond_4_circles.png" alt="circles" height="100" width="100">
+      <label class="tot-shad">Total<br>Shadow</label>
+      <label class="perm-shad">Perm<br>Shadow</label>
+    </div>
 
+    <div data-group="primary" data-tab="front">
+      <table class="conditions">
+        <tr>
+          <td><label>Weary</label></td>
+          <td><input type="checkbox" name="data.weary" {{checked actor.data.weary}}></td>
+        </tr>
+        <tr>
+          <td><label>Miserable</label></td>
+          <td><input type="checkbox" name="data.miserable" {{checked actor.data.miserable}}></td>
+        </tr>
+        <tr>
+          <td><label>Wounded</label></td>
+          <td><input type="checkbox" name="data.wounded" {{checked actor.data.wounded}}></td>
+        </tr>
+      </table>
+    </div>
+  </div>  
 
-
-
-
-
-
-
-
+  <div class="tab back" data-group="primary" data-tab="back">
+    <div  data-group="primary" data-tab="back">
+      <label>back tab</label>
+    </div>
+  </div>
+  </section>
       <!--
         {{!-- Biography Tab --}}
         <div class="tab biography" data-group="primary" data-tab="description">

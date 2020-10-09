@@ -19,7 +19,7 @@
   overflow-y: scroll;
 }
 .torrpg .sheet-header {
-  height: 170px;
+  height: 180px;
   width: 80%;
   overflow: hidden;
   display: flex;
@@ -176,10 +176,11 @@
 .torrpg .attributes-body {
   width: 80%;
   margin-bottom: 5px;
-  position: relative
+  position: relative;
 }
 .torrpg .attributes-body img {
   border-width: 0px;
+  margin-left: -1px;
 }
 .torrpg .attributes-body label {
   font-size: 26px;
@@ -388,161 +389,69 @@
   width: 40px;
   text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.torrpg .sheet-body .fav-attributes-body input {
-  background-color: brown;
-  width: 30px;
-  height: 30px;
+.torrpg .other-gear {
   border-width: 0px;
-  font-size: 30px;
+  float: left;
+  width: 40%;
+}
+.torrpg .other-gear table {
+  border-width: 0px;
+}
+.torrpg .other-gear input.name {
+  border-width: 0px;
+  border-bottom: 1px solid black;
+}
+.torrpg .other-gear input.enc {
+  border-width: 0px;
+  border-bottom: 1px solid black;
+  width: 10px;
+}
+.torrpg .endhope-caption {
+  width: 80%;
+}
+.torrpg .endhope-caption label {
+  font-size: 22px;
+  margin-left: 20px;
+  padding-left: 15px;
+}
+.torrpg .end-hope {
+  background-color: thistle;
+  width: 40%;
+  float: left;
   position: relative;
-  left: 150px;
-  top: 300px;
-  margin: 33px 167px 0px 0px;
 }
-*/
-/*
-.torrpg .tabs {
-  height: 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
+.torrpg img {
+  border-width: 0px;
+  margin-left: 20px;
 }
-.torrpg .tabs .item {
-  line-height: 40px;
-  font-weight: bold;
+.torrpg .end-hope label.end-max {
+  position: absolute;
 }
-.torrpg .tabs .item.active {
-  text-decoration: underline;
-  text-shadow: none;
+.torrpg .end-hope label.fatigue {
+  position: absolute;
+  left: 20px;
+  top: 90px;
 }
-.torrpg .sheet-body {
-  overflow: hidden;
+.torrpg .end-hope label.hope-max {
+  position: relative;
+  bottom: 90px;
+  left: 35px;
 }
-.torrpg .sheet-body .tab {
-  height: 100%;
-  overflow-y: auto;
+.torrpg .end-hope label.tot-shad {
+  position: absolute;
+  top: 70px;
+  right: 120px;
 }
-.torrpg .editor,
-.torrpg .editor-content {
-  height: 100%;
+.torrpg .end-hope label.perm-shad {
+  position: absolute;
+  top: 70px;
+  left: 255px;
+  text-align: right;
 }
-.torrpg .item-list {
-  list-style: none;
-  margin: 7px 0;
-  padding: 0;
-  overflow-y: auto;
-}
-.torrpg .item-list .item {
-  min-height: 30px;
-  line-height: 24px;
-  padding: 3px 0;
-  border-bottom: 1px solid #BBB;
-  align-items: stretch;
-}
-.torrpg .item-list .item img {
-  flex: 0 0 24px;
-  margin-right: 5px;
-}
-.torrpg .item-list .item-name {
-  margin: 0;
-}
-.torrpg .item-list .item-controls {
-  flex: 0 0 36px;
-}
-.torrpg .item-list .item-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: center;
-  flex: 2;
-  justify-content: flex-start;
-}
-.torrpg .item-list .item-button {
-  line-height: 1;
-  font-size: 11px;
-  flex: none;
-  width: auto;
-}
-.torrpg .attributes-header {
-  padding: 5px;
-  margin: 5px 0;
-  background: rgba(0, 0, 0, 0.05);
-  border: 1px solid #AAA;
-  border-radius: 2px;
-  text-align: center;
-  font-weight: bold;
-}
-.torrpg .attributes-header .attribute-label {
-  flex: 1.5;
-}
-.torrpg .attributes-header .attribute-control {
-  flex: 0 0 20px;
-}
-.torrpg .attributes-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.torrpg .attributes-list li > * {
-  margin: 0 3px;
-  height: 28px;
-  line-height: 24px;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #AAA;
-}
-.torrpg .attributes-list a.attribute-control {
-  flex: 0 0 20px;
-  text-align: center;
-  line-height: 28px;
-  border: none;
-}
-.torrpg .attributes-list .attribute-col label {
-  font-size: 10px;
-  text-align: center;
-  line-height: 1;
-}
-.torrpg .attributes-list .attribute-col input {
-  font-size: 11px;
-  text-align: center;
-  line-height: 1;
-  height: 50%;
-}
-*/
-.torrpg.sheet.actor {
-  min-width: 560px;
-  min-height: 420px;
-}
-.torrpg.sheet.item {
-  min-width: 460px;
-  min-height: 400px;
+.torrpg .conditions {
+  background-color: tomato;
+  border-width: 0px;
+  width: 20%;
+  float: right;
+  font-size: 20px;
 }

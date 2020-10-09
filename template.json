@@ -13,6 +13,7 @@
         "max": 0
       },
       "weary": false,
+      "miserable": false,
       "wounded": false,
       "protection": {
         "armour": 0,
@@ -137,7 +138,8 @@
       "hope": {
       "value": 0,
       "max": 0,
-      "shad": 0
+      "tempshad": 0,
+      "permshad": 0
       }
     }
   },
@@ -288,9 +290,18 @@
       "base": 0,
       "ranged": 0
     },
-    "enc": {
-      "max": 0,
-      "value": 0
+    "gear": {
+      "armname": "",
+      "armenc": 0,
+      "helmname": "",
+      "helmenc": 0,
+      "shieldname": "",
+      "sheildenc": 0,
+      "misc1name": "",
+      "misc1enc": 0,
+      "misc2name": "",
+      "misc2enc": 0,
+      "faitgue": 0
     }
   },
   "enemy": {
