@@ -139,7 +139,7 @@
       "value": 0,
       "max": 0,
       "tempshad": 0,
-      "permshad": 0
+      "totshad": 0
       }
     }
   },
@@ -174,91 +174,109 @@
     },
    "commskills": {
       "awe": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "ath": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "aware": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "explore": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "song": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "craft": {
+        "name": "Awe",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "inspire": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "travel": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "insight": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "healing": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "courtesy": {
-        "ranks": 0,
-        "max": 6,
-        "favoured": false
-      },
-      "battle": {
+        "name": "Inspire",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "persuade": {
+        "name": "Persuade",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "ath": {
+        "name": "Atheltics",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "travel": {
+        "name": "Travel",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "stealth": {
+        "name": "Stealth",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "aware": {
+        "name": "Aware",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "insight": {
+        "name": "Insight",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "search": {
+        "name": "Search",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "explore": {
+        "name": "Explore",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "healing": {
+        "name": "Healing",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "hunting": {
+        "name": "Hunting",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "song": {
+        "name": "Song",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "courtesy": {
+        "name": "Courtesy",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "riddle": {
+        "name": "Riddle",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "craft": {
+        "name": "Craft",
+        "ranks": 0,
+        "max": 6,
+        "favoured": false
+      },
+      "battle": {
+        "name": "Battle",
         "ranks": 0,
         "max": 6,
         "favoured": false
       },
       "lore": {
+        "name": "Lore",
         "ranks": 0,
         "max": 6,
         "favoured": false
@@ -296,13 +314,22 @@
       "helmname": "",
       "helmenc": 0,
       "shieldname": "",
-      "sheildenc": 0,
+      "shieldenc": 0,
       "misc1name": "",
       "misc1enc": 0,
       "misc2name": "",
       "misc2enc": 0,
-      "faitgue": 0
-    }
+      "totenc": 0,
+      "travfatigue": 0
+    },
+    "fellowshipPoints": {
+      "value": 0,
+      "max": 0
+    },
+    "advPointsTot": 0,
+    "treasure": 0,
+    "standing": 0,
+    "permshad": 0
   },
   "enemy": {
     "templates": [

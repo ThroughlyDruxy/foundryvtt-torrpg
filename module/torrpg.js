@@ -2,6 +2,7 @@
 import { ActorTORRPG } from "./actor.js";
 import { TORItemSheet } from "./item-sheet.js";
 import { ActorSheetTORRPG } from "./pc-sheet.js";
+import { ActorSheetTORRPGEnemy } from "./enemy-sheet.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -25,6 +26,8 @@ Hooks.once("init", async function() {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
   Actors.registerSheet("torrpg", ActorSheetTORRPG, {makeDefault: true });
+  Actors.unregisterSheet("core", ActorSheet);
+  Actors.registerSheet("torrpg", ActorSheetTORRPGEnemy, {makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
   Items.registerSheet("torrpg", TORItemSheet, { makeDefault: true });
 

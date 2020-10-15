@@ -2,13 +2,13 @@
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class ActorSheetTORRPG extends ActorSheet {
+export class ActorSheetTORRPGEnemy extends ActorSheet {
 
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["torrpg", "sheet", "actor"],
-  	  template: "systems/torrpg/templates/pc-sheet.html",
+  	  template: "systems/torrpg/templates/enemy-sheet.html",
       width: 800,
       height: 900,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],

@@ -13,6 +13,18 @@
   /* Items List */
   /* Attributes */
 }
+.torrpg input, table, label {
+  background: transparent;
+}
+.torrpg .sheet-tabs {
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.torrpg .sheet-tabs .item {
+  font-size: 28px;
+  border: 1px solid black;
+}
 .torrpg .window-content {
   height: 100%;
   padding: 5px;
@@ -32,6 +44,8 @@
 .torrpg .sheet-header .profile-img {
   flex: 0 0 100px;
   height: 100px;
+  width: 100px;
+  margin-left: 0px;
 }
 .torrpg .sheet-header .header-fields {
   flex: 1;
@@ -55,6 +69,13 @@
   display: flex;
   flex-wrap: wrap;
 }
+.torrpg .exp-val-wis input {
+  text-align: center;
+  border-width: 0px;
+  width: 30px;
+  height: 40px;
+  font-size: 40px;
+}
 .torrpg .exp-val-wis img {
   border-width: 0px;
   width: 100px;
@@ -72,47 +93,30 @@
 .torrpg .exp-val-wis label.tot {
   font-size: 16px;
   position: absolute;
-  top: 40px;
-  left: 5px;
+  top: 35px;
+  left: 2px;
 }
 .torrpg .exp-val-wis input.exp {
-  text-align: center;
-  border-width: 0px;
-  width: 30px;
-  height: 40px;
-  font-size: 35px;
   position: absolute;
-  top: 55px;
-  left: 72px;
+  top: 57px;
+  left: 77px;
 }
 .torrpg .exp-val-wis input.totexp {
-  border-width: 0px;
-  text-align: center;
-  width: 20px;
-  height: 25px;
-  font-size: 24px;
+  width: 24px;
+  height: 32px;
+  font-size: 32px;
   position: absolute;
-  top: 36px;
-  left: 52px;
+  top: 30px;
+  left: 50px;
 }
 .torrpg .exp-val-wis input.val {
-  border-width: 0px;
-  text-align: center;
-  width: 30px;
-  height: 40px;
-  font-size: 35px;
   position: absolute;
   top: 185px;
   left: 72px;
 }
 .torrpg .exp-val-wis input.wis {
-  border-width: 0px;
-  text-align: center;
-  width: 30px;
-  height: 40px;
-  font-size: 35px;
   position: absolute;
-  top: 315px;
+  top: 317px;
   left: 72px;
 }
 .torrpg .details {
@@ -216,9 +220,8 @@
 .torrpg .comskil-table th {
   width: 15px;
 }
-.torrpg .comskil-table .ranksinput {
-  width: 15px;
-  text-align: center;
+.torrpg .comskil-table .skill {
+  width: 13%;
 }
 .torrpg .skilgrp-table {
   border-width: 0px;
@@ -240,7 +243,6 @@
 }
 .torrpg .weapskil-table .weapname {
   border-width: 0px;
-  border-bottom: 1px solid black;
   width: 120px;
 }
 .torrpg .dam-par-arm {
@@ -256,34 +258,34 @@
   width: 100px;
   height: 100px;
   margin-left: auto;
-  margin-right: 20px;
+  margin-right: 15px;
   margin-bottom: 10px;
 }
 .torrpg .dam-par-arm label.caption {
   font-size: 22px;
   width: 100%;
   text-align: center;
-  margin-left: 15px;
+  margin-left: 30px;
 }
 .torrpg .dam-par-arm input.dam {
-  font-size: 35px;
-  height: 40px;
   width: 30px;
+  height: 40px;
+  font-size: 40px;
   text-align: center;
   border-width: 0px;
   position: absolute;
-  top: 53px;
-  left: 70px;
+  top: 48px;
+  left: 82px;
 }
 .torrpg .dam-par-arm label.ranged {
   font-size: 16px;
   position: absolute;
-  top: 80px;
+  top: 110px;
 }
 .torrpg .dam-par-arm input.ranged {
-  font-size: 24px;
-  height: 25px;
-  width: 20px;
+  width: 24px;
+  height: 32px;
+  font-size: 32px;
   text-align: center;
   border-width: 0px;
   position: absolute;
@@ -293,22 +295,23 @@
 .torrpg .dam-par-arm label.shield {
   font-size: 16px;
   position: absolute;
-  top: 215px;
+  top: 235px;
+  left: 5px;
 }
 .torrpg .dam-par-arm input.parry {
-  font-size: 35px;
-  height: 40px;
   width: 30px;
+  height: 40px;
+  font-size: 40px;
   text-align: center;
   border-width: 0px;
   position: absolute;
-  top: 185px;
-  left: 70px;
+  top: 179px;
+  left: 82px;
 }
 .torrpg .dam-par-arm input.shield {
-  font-size: 24px;
-  height: 25px;
-  width: 20px;
+  width: 24px;
+  height: 32px;
+  font-size: 32px;
   text-align: center;
   border-width: 0px;
   position: absolute;
@@ -319,27 +322,28 @@
   font-size: 16px;
   text-align: center;
   position: absolute;
-  top: 340px;
+  top: 360px;
+  left: 10px;
 }
 .torrpg .dam-par-arm input.armour {
-  font-size: 35px;
-  height: 40px;
   width: 30px;
+  height: 40px;
+  font-size: 40px;
   text-align: center;
   border-width: 0px;
   position: absolute;
   position: absolute;
-  top: 320px;
-  left: 70px;
+  top: 311px;
+  left: 82px;
 }
 .torrpg .dam-par-arm input.helm {
-  font-size: 24px;
-  height: 25px;
-  width: 20px;
+  width: 24px;
+  height: 32px;
+  font-size: 32px;
   text-align: center;
   border-width: 0px;
   position: absolute;
-  top: 345px;
+  top: 347px;
   left: 53px;
 }
 .torrpg .cat-header-partial .rew-head {
@@ -381,7 +385,6 @@
 }
 .torrpg .weapgear-table input.name {
   border-width: 0px;
-  border-bottom: 1px solid black;
 }
 .torrpg .weapgear-table input.other {
   border-width: 0px;
@@ -411,47 +414,177 @@
 }
 .torrpg .endhope-caption label {
   font-size: 22px;
-  margin-left: 20px;
-  padding-left: 15px;
+  margin-left: 37px;
+  padding-left: 20px;
 }
 .torrpg .end-hope {
-  background-color: thistle;
-  width: 40%;
+  width: 48%;
   float: left;
   position: relative;
 }
+.torrpg .end-hope input {
+  border-width: 0px;
+  width: 28px;
+  height: 26px;
+  font-size: 22px;
+  text-align: center;
+}
 .torrpg img {
   border-width: 0px;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 .torrpg .end-hope label.end-max {
   position: absolute;
+  left: 12px;
 }
-.torrpg .end-hope label.fatigue {
+.torrpg .end-hope input.end-value {
+  font-size: 26px;
+  height: 36px;
+  width: 34px;
   position: absolute;
-  left: 20px;
+  top: 39px;
+  left: 78px;
+}
+.torrpg .end-hope input.end-max {
+  position: absolute;
+  top: 10px;
+  left: 49px;
+}
+.torrpg .end-hope label.tot-enc {
+  position: absolute;
+  left: 5px;
   top: 90px;
+}
+.torrpg .end-hope input.tot-enc {
+  position: absolute;
+  top: 74px;
+  left: 49px;
+}
+.torrpg .end-hope label.trav-fatigue {
+  position: absolute;
+  top: 80px;
+  left: 150px;
+  text-align: right;
+}
+.torrpg .end-hope input.trav-fatigue {
+  position: absolute;
+  top: 74px;
+  left: 113px;
+}
+.torrpg .end-hope input.hope-value {
+  font-size: 26px;
+  height: 36px;
+  width: 34px;
+  position: absolute;
+  top: 39px;
+  left: 265px;
 }
 .torrpg .end-hope label.hope-max {
   position: relative;
-  bottom: 90px;
-  left: 35px;
+  bottom: 100px;
+  left: 45px;
+}
+.torrpg .end-hope input.hope-max {
+  position: absolute;
+  top: 10px;
+  left: 235px;
 }
 .torrpg .end-hope label.tot-shad {
   position: absolute;
-  top: 70px;
-  right: 120px;
+  top: 100px;
+  right: 135px;
 }
-.torrpg .end-hope label.perm-shad {
+.torrpg .end-hope input.tot-shad {
   position: absolute;
-  top: 70px;
-  left: 255px;
+  top: 74px;
+  left: 235px;
+}
+.torrpg .end-hope label.temp-shad {
+  position: absolute;
+  top: 90px;
+  right: 5px;
   text-align: right;
 }
+.torrpg .end-hope input.temp-shad {
+  position: absolute;
+  top: 74px;
+  left: 298px;
+}
 .torrpg .conditions {
-  background-color: tomato;
   border-width: 0px;
-  width: 20%;
+  width: 12%;
+  height: 100px;
   float: right;
-  font-size: 20px;
+  font-size: 16px;
+  position: relative;
+  bottom: 30px;
+  background: transparent;
+}
+/*
+Back tab stuff for PC sheet
+*/
+.torrpg .back .caps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.torrpg .back .caps label {
+  font-size: 22px;
+  text-align: center;
+}
+.torrpg .back .inputs {
+  position: relative;
+}
+.torrpg .back .inputs input {
+  font-size: 30px;
+  width: 30px;
+  height: 32px;
+  text-align: center;
+  border-width: 0px;
+  z-index: 1;
+}
+.torrpg .back .inputs input.f {
+  position: absolute;
+  left: 24px;
+  top: 29px;
+}
+.torrpg .back .inputs img.f {
+  position: relative;
+  right: 45px;
+}
+.torrpg .back .inputs input.ap {
+  position: absolute;
+  left: 211px;
+  top: 29px;
+}
+.torrpg .back .inputs img.ap {
+  position: relative;
+  left: 8px;
+}
+.torrpg .back .inputs input.t {
+  position: absolute;
+  left: 396px;
+  top: 29px;
+}
+.torrpg .back .inputs img.t {
+  position: relative;
+  left: 57px;
+}
+.torrpg .back .inputs input.s {
+  position: absolute;
+  left: 557px;
+  top: 29px;
+}
+.torrpg .back .inputs img.s {
+  position: relative;
+  left: 84px;
+}
+.torrpg .back .inputs input.ps {
+  position: absolute;
+  left: 727px;
+  top: 29px;
+}
+.torrpg .back .inputs img.ps {
+  position: relative;
+  left: 120px;
 }

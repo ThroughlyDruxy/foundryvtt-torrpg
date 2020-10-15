@@ -1,112 +1,420 @@
 <form class="{{cssClass}}" autocomplete="off">
 
-    {{!-- Sheet Header --}}
-    <div class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-        <div class="header-fields">
-          <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-          <div class="details">
-            <label>Culture:</label>
-            <input type="text" name="data.details.culture" value="{{data.details.culture}}" data-dtype="text"/>
-            <label>Standard of Living:</label>
-            <input type="text" name="data.details.standlive" value="{{data.details.standlive}}" data-dtype="text"/>
-          </div>
-          <div class="long-details">
-            <label>Cultural Blessing:</label>
-            <input type="text" name="data.details.culbless" value="{{data.details.culbless}}" data-dtype="text"/>
-          </div>
-          <div class="details">
-            <label>Calling:</label>
-            <input type="text" name="data.details.calling" value="{{data.details.calling}}" data-dtype="text"/>
-            <label>Shadow Weakness:</label>
-            <input type="text" name="data.details.shadweak" value="{{data.details.shadweak}}" data-dtype="text"/>
-          </div>
-        </div>
+  {{!-- Sheet Header --}}
+  <div class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="120" width="120">
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"></h1>
+      <div class="details">
+        <label>Culture:</label>
+        <input type="text" name="data.details.culture" value="{{data.details.culture}}" data-dtype="text">
+        <label>Standard of Living:</label>
+        <input type="text" name="data.details.standlive" value="{{data.details.standlive}}" data-dtype="text">
       </div>
+      <div class="long-details">
+        <label>Cultural Blessing:</label>
+        <input type="text" name="data.details.culbless" value="{{data.details.culbless}}" data-dtype="text">
+      </div>
+      <div class="details">
+        <label>Calling:</label>
+        <input type="text" name="data.details.calling" value="{{data.details.calling}}" data-dtype="text"/>
+        <label>Shadow Weakness:</label>
+        <input type="text" name="data.details.shadweak" value="{{data.details.shadweak}}" data-dtype="text"/>
+      </div>
+    </div>
+  </div>
+  <div class="exp-val-wis">
+    <label class="caption">Experience</label>
+    <input class="exp" type="text" name="data.expvalwis.exp.unspent" value="{{data.expvalwis.exp.unspent}}" data-dtype="number">
+    <label class="tot">Total</label>
+    <input class="totexp" type="text" name="data.expvalwis.exp.total" value="{{data.expvalwis.exp.total}}" data-dtype="number">
+    <img src="systems/torrpg/styles/diamond_2_circles.png" alt="circles" height="100" width="100">
+    <label class="caption">Valour</label>
+    <input class="val" type="text" name="data.expvalwis.val" value="{{data.expvalwis.val}}" data-dtype="number">
+    <img src="systems/torrpg/styles/diamond_circle.png" alt="circles" height="100" width="100">
+    <label class="caption">Wisdom</label>
+    <input class="wis" type="text" name="data.expvalwis.exp.wis" value="{{data.expvalwis.wis}}" data-dtype="number">
+    <img src="systems/torrpg/styles/diamond_circle.png" alt="circles" height="100" width="100">
+  </div>
+
 <!--
-    {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="items">Items</a>
-        <a class="item" data-tab="attributes">Attributes</a>
-    </nav>
-  -->
-    {{!-- Sheet Body --}}
-    <div class="sheet-body">
+  Attributes section
+-->
 
-      <div class="traits">
-        <h2 class="traits-header">- Traits -</h2>
-        <div class="long-details">
-          <label>Specialties:</label>
-          <input type="text" name="data.traits.specialties" value="{{data.traits.specialties}}" data-dtype="text"/>
-          <label>Distinctive Features:</label>
-          <input type="text" name="data.traits.distfeat" value="{{data.traits.distfeat}}" data-dtype="text"/>
-        </div>
-      </div>
-      <div class="attributes-body">
-        <h2 class="traits-header">- Attributes -</h2>
-        <div class="attributes-body">
-          <label>Body</label>
-          <input type="text" name="data.abilities.body.unfavoured" value="{{data.abilities.body.unfavoured}}" data-dtype="number"/>
-          <img class="attribute-img" src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="100" width="100">
-          <label>Heart</label>
-          <input type="text" name="data.abilities.heart.unfavoured" value="{{data.abilities.heart.unfavoured}}" data-dtype="number"/>
-          <img class="attribute-img" src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="100" width="100">
-          <label>Wits</label>
-          <input type="text" name="data.abilities.wits.unfavoured" value="{{data.abilities.wits.unfavoured}}" data-dtype="number"/>
-          <img class="attribute-img" src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="100" width="100">
-        </div>
-      </div>
+  <div>
+    <h2 class="cat-header-partial">- Traits -</h2>
+  </div>
+  <div class="traits-body">
+    <div class="long-details">
+      <label>Specialties:</label>
+      <input type="text" name="data.specialties" value="{{data.specialties}}" data-dtype="text"/><br>
+      <label>Distinctive Features:</label>
+      <input type="text" name="data.distfeat" value="{{data.distfeat}}" data-dtype="text"/>
+    </div>
+  </div>
+  <div>
+    <h2 class="cat-header-partial">- Attributes -</h2>
+  </div>
+  <div class="attributes-body">
+    <label>Body</label>
+    <input class="unfav-attrib" type="text" name="data.abilities.body.unfavoured" value="{{data.abilities.body.unfavoured}}" data-dtype="number"/>
+    <input class="fav-attrib" type="text" name="data.abilities.body.favoured" value="{{data.abilities.body.favoured}}" data-dtype="number"/>
+    <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
+    <label>Heart</label>
+    <input class="unfav-attrib" type="text" name="data.abilities.heart.unfavoured" value="{{data.abilities.heart.unfavoured}}" data-dtype="number"/>
+    <input class="fav-attrib" type="text" name="data.abilities.heart.favoured" value="{{data.abilities.heart.favoured}}" data-dtype="number"/>
+    <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
+    <label>Wits</label>
+    <input class="unfav-attrib" type="text" name="data.abilities.wits.unfavoured" value="{{data.abilities.wits.unfavoured}}" data-dtype="number"/>
+    <input class="fav-attrib" type="text" name="data.abilities.wits.favoured" value="{{data.abilities.wits.favoured}}" data-dtype="number"/>
+    <img src="systems/torrpg/styles/attribute_circles.png" alt="circles" height="80" width="80">
+  </div>
 
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="front">Frontside</a>
+    <a class="item" data-tab="back">Backside</a>
+  </nav>
+
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+<!--
+  Common skills section
+-->
+
+  {{!-- Front --}}
+  <div class="tab front" data-group="primary" data-tab="front">
+    <div class="cat-header-full" data-group="primary" data-tab="front">
+      <h2 class="comskil-head">- Common Skills -</h2>
+      <h2 class="skilgrp-head">- Skill Groups -</h2>
+    </div>
+    <div data-group="primary" data-tab="front">
+      <table class="comskil-table">
+        <tr>
+          <!--Awe-->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.awe.favoured" {{checked actor.data.commskills.awe.favoured}}></th>
+          <td><label>Awe</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.awe.ranks" value="{{data.commskills.awe.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!--Inspire-->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.inspire.favoured" {{checked actor.data.commskills.inspire.favoured}}></th>
+          <td><label>Inspire</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.inspire.ranks" value="{{data.commskills.inspire.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!--Presuade-->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.persuade.favoured" {{checked actor.data.commskills.persuade.favoured}}></th>
+          <td><label>Persuade</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.persuade.ranks" value="{{data.commskills.persuade.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+        <tr>
+          <!-- Athletics -->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.ath.favoured" {{checked actor.data.commskills.ath.favoured}}></th>
+          <td><label>Athletics</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.ath.ranks" value="{{data.commskills.ath.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Travel -->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.travel.favoured" {{checked actor.data.commskills.travel.favoured}}></th>
+          <td><label>Travel</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.travel.ranks" value="{{data.commskills.travel.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Stealth -->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.stealth.favoured" {{checked actor.data.commskills.stealth.favoured}}></th>
+          <td><label>Stealth</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.stealth.ranks" value="{{data.commskills.stealth.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+        <tr>
+          <!-- Awareness -->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.aware.favoured" {{checked actor.data.commskills.aware.favoured}}></th>
+          <td><label>Awareness</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.aware.ranks" value="{{data.commskills.aware.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Insight -->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.insight.favoured" {{checked actor.data.commskills.insight.favoured}}></th>
+          <td><label>Insight</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.insight.ranks" value="{{data.commskills.insight.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Search -->
+          <th><input class="fav-check" type="checkbox" name="data.commskills.search.favoured" {{checked actor.data.commskills.search.favoured}}></th>
+          <td><label>Search</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.search.ranks" value="{{data.commskills.search.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+        <tr>
+          <!-- Explore -->
+          <th><input type="checkbox" name="data.commskills.explore.favoured" {{checked actor.data.commskills.explore.favoured}}></th>
+          <td><label>Explore</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.explore.ranks" value="{{data.commskills.explore.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Healing -->
+          <th><input type="checkbox" name="data.commskills.healing.favoured" {{checked actor.data.commskills.healing.favoured}}></th>
+          <td><label>Healing</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.healing.ranks" value="{{data.commskills.healing.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Hunting -->
+          <th><input type="checkbox" name="data.commskills.hunting.favoured" {{checked actor.data.commskills.hunting.favoured}}></th>
+          <td><label>Hunting</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.hunting.ranks" value="{{data.commskills.hunting.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+        <tr>
+          <!-- Song -->
+          <th><input type="checkbox" name="data.commskills.song.favoured" {{checked actor.data.commskills.song.favoured}}></th>          <td><label>Song</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.song.ranks" value="{{data.commskills.song.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Courtesy -->
+          <th><input type="checkbox" name="data.commskills.courtesy.favoured" {{checked actor.data.commskills.courtesy.favoured}}></th>
+          <td><label>Courtesy</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.courtesy.ranks" value="{{data.commskills.courtesy.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Riddle -->
+          <th><input type="checkbox" name="data.commskills.riddle.favoured" {{checked actor.data.commskills.riddle.favoured}}></th>
+          <td><label>Riddle</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.riddle.ranks" value="{{data.commskills.riddle.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+        <tr>
+          <!-- Craft -->
+          <th><input type="checkbox" name="data.commskills.craft.favoured" {{checked actor.data.commskills.craft.favoured}}></th>
+          <td><label>Craft</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.craft.ranks" value="{{data.commskills.craft.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Battle -->
+          <th><input type="checkbox" name="data.commskills.battle.favoured" {{checked actor.data.commskills.battle.favoured}}></th>
+          <td><label>Battle</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.battle.ranks" value="{{data.commskills.battle.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Lore -->
+          <th><input type="checkbox" name="data.commskills.lore.favoured" {{checked actor.data.commskills.lore.favoured}}></th>
+          <td><label>Lore</label></td>
+          <td><input class="ranksinput" type="text" name="data.commskills.lore.ranks" value="{{data.commskills.lore.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+      </table>
     </div>
 
+    <!--
+      Skill groups
+    -->
 
-      <!--
-        {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="description">
-            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
-        </div>
+    <div class="skillgrps " data-group="primary" data-tab="front">
+      <table class="skilgrp-table">
+        {{#each data.skillgrps as |skillgrps grp|}}
+          <tr>
+            <td><label>{{grp}}</label></td>
+            <td><input class="ranksinput" type="text" name="data.skillgrps.{{grp}}.value" value="{{skillgrps.value}}" data-dtype="number"><label>/ 3</label></td>
+          </tr>
+        {{/each}}
+      </table>
+    </div>
 
-        {{!-- Owned Items Tab --}}
-        <div class="tab items" data-group="primary" data-tab="items">
-            <ol class="item-list">
-            {{#each actor.items as |item id|}}
-                <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24"/>
-                    <h4 class="item-name">{{item.name}}</h4>
-                    {{!-- Iterate through all attributes on the item and output buttons for any that are formula. --}}
-                    <div class="item-buttons">
-                      {{#each item.data.attributes as |itemAttr key|}}
-                        {{#if (eq itemAttr.dtype "Formula")}}
-                          {{!-- Use the items.name.key format for shorthand. --}}
-                          {{#if ../../shorthand}}
-                            <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.{{key}}" title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                          {{!-- Use the items.name.attributes.key.value format otherwise. --}}
-                          {{else}}
-                            <button class="item-button rollable" data-roll="@items.{{slugify item.name}}.attributes.{{key}}.value" title="{{itemAttr.value}}">{{itemAttr.label}}</button>
-                          {{/if}}
-                        {{/if}}
-                      {{/each}}
-                    </div>
-                    <div class="item-controls">
-                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                    </div>
-                </li>
-            {{/each}}
-            </ol>
-        </div>
+    <div data-group="primary" data-tab="front">
+      <h2 class="cat-header-partial">- Weapon Skills -</h2>
+    </div>
+    <div data-group="primary" data-tab="front">
+      <table class="weapskil-table">
+        <tr>
+          <!-- Weapon 1 -->
+          <td><input type="checkbox" name="data.weapskills.weap1.favoured" {{checked actor.data.weapskills.weap1.favoured}}></td>
+          <td><input class="weapname" type="text" name="data.weapskills.weap1.name" value="{{data.weapskills.weap1.name}}" data-dtype="text"></td>
+          <td><input class="ranksinput" type="text" name="data.weapskills.weap1.ranks" value="{{data.weapskills.weap1.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Weapon 3 -->
+          <td><input type="checkbox" name="data.weapskills.weap3.favoured" {{checked actor.data.weapskills.weap3.favoured}}></td>
+          <td><input class="weapname" type="text" name="data.weapskills.weap3.name" value="{{data.weapskills.weap3.name}}" data-dtype="text"></td>
+          <td><input class="ranksinput" type="text" name="data.weapskills.weap3.ranks" value="{{data.weapskills.weap3.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Weapon 5 -->
+          <td><input type="checkbox" name="data.weapskills.weap5.favoured" {{checked actor.data.weapskills.weap5.favoured}}></td>
+          <td><input class="weapname" type="text" name="data.weapskills.weap5.name" value="{{data.weapskills.weap5.name}}" data-dtype="text"></td>
+          <td><input class="ranksinput" type="text" name="data.weapskills.weap5.ranks" value="{{data.weapskills.weap5.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+        <tr>
+          <!-- Weapon 2 -->
+          <td><input type="checkbox" name="data.weapskills.weap2.favoured" {{checked actor.data.weapskills.weap2.favoured}}></td>
+          <td><input class="weapname" type="text" name="data.weapskills.weap2.name" value="{{data.weapskills.weap2.name}}" data-dtype="text"></td>
+          <td><input class="ranksinput" type="text" name="data.weapskills.weap2.ranks" value="{{data.weapskills.weap2.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Weapon 4 -->
+          <td><input type="checkbox" name="data.weapskills.weap4.favoured" {{checked actor.data.weapskills.weap4.favoured}}></td>
+          <td><input class="weapname" type="text" name="data.weapskills.weap4.name" value="{{data.weapskills.weap4.name}}" data-dtype="text"></td>
+          <td><input class="ranksinput" type="text" name="data.weapskills.weap4.ranks" value="{{data.weapskills.weap4.ranks}}" data-dtype="number"><label> / 6</label></td>
+          <!-- Weapon 6 -->
+          <td><input type="checkbox" name="data.weapskills.weap6.favoured" {{checked actor.data.weapskills.weap6.favoured}}></td>
+          <td><input class="weapname" type="text" name="data.weapskills.weap6.name" value="{{data.weapskills.weap6.name}}" data-dtype="text"></td>
+          <td><input class="ranksinput" type="text" name="data.weapskills.weap6.ranks" value="{{data.weapskills.weap6.ranks}}" data-dtype="number"><label> / 6</label></td>
+        </tr>
+      </table>
+    </div>
+    <div class="dam-par-arm" data-group="primary" data-tab="front">
+      <label class="caption">Damage</label>
+      <input class="dam" type="text" name="data.chardamage.base" value="{{data.chardamage.base}}" data-dtype="number"/>
+      <label class="ranged">Ranged</label>
+      <input class="ranged" type="text" name="data.chardamage.ranged" value="{{data.chardamage.ranged}}" data-dtype="number"/>
+      <img src="systems/torrpg/styles/diamond_2_circles_down.png" alt="circles" height="100" width="100">
+      <label class="caption">Parry</label>
+      <input class="parry" type="text" name="data.parry.base" value="{{data.parry.base}}" data-dtype="number"/>
+      <label class="shield">Shield</label>
+      <input class="shield" type="text" name="data.parry.shield" value="{{data.parry.shield}}" data-dtype="number"/>
+      <img src="systems/torrpg/styles/diamond_2_circles_down.png" alt="circles" height="100" width="100">
+      <label class="caption">Armour</label>
+      <input class="armour" type="text" name="data.protection.armour" value="{{data.protection.armour}}" data-dtype="number"/>
+      <label class="helm">Head<br>gear</label>
+      <input class="helm" type="text" name="data.protection.helm" value="{{data.protection.helm}}" data-dtype="number"/>
+      <img src="systems/torrpg/styles/diamond_2_circles_down.png" alt="circles" height="100" width="100">
+    </div>
 
-        {{!-- Attributes Tab --}}
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">Attribute Key</span>
-                <span class="attribute-value">Value</span>
-                <span class="attribute-label">Label</span>
-                <span class="attribute-dtype">Data Type</span>
-                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
-            </header>
+    <!-- Rewards and Virtues -->
 
-        </div>
-      -->
+    <div class="cat-header-partial" data-group="primary" data-tab="front">
+      <h2 class="rew-head">- Rewards -</h2>
+      <h2 class="virt-head">- Virtues -</h2>
+    </div>
+    <div class="reward-virtue" data-group="primary" data-tab="front">
+      <table class="rew-table">
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.rewards.reward1" value="{{data.rewards.reward1}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.rewards.reward2" value="{{data.rewards.reward2}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.rewards.reward3" value="{{data.rewards.reward3}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.rewards.reward4" value="{{data.rewards.reward4}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.rewards.reward5" value="{{data.rewards.reward5}}" data-dtype="text"></td>
+        </tr>
+      </table>
+      <table class="virt-table">
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.virtues.virtue1" value="{{data.virtues.virtue1}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.virtues.virtue2" value="{{data.virtues.virtue2}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.virtues.virtue3" value="{{data.virtues.virtue3}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.virtues.virtue4" value="{{data.virtues.virtue4}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <td><input class="rew-virt" type="text" name="data.virtues.virtue5" value="{{data.virtues.virtue5}}" data-dtype="text"></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Gear -->
+
+    <div data-group="primary" data-tab="front">
+      <h2 class="cat-header-partial">- Gear -</h2>
+    </div>
+    <div data-group="primary" data-tab="front">
+      <table class="weapgear-table">
+        <tr>
+          <!-- weapon 1-->
+          <td><label>weapon</label></td>
+          <td><input class="name" type="text" name="data.weapstats.weapstat1.name" value="{{data.weapstats.weapstat1.name}}" data-dtype="text"></td>
+          <td><label>damage</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat1.damage" value="{{data.weapstats.weapstat1.damage}}" data-dtype="number"></td>
+          <td><label>edge</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat1.edge" value="{{data.weapstats.weapstat1.edge}}" data-dtype="text"></td>
+          <td><label>injury</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat1.injury" value="{{data.weapstats.weapstat1.injury}}" data-dtype="number"></td>
+          <td><label>enc</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat1.enc" value="{{data.weapstats.weapstat1.enc}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <!-- weapon 2-->
+          <td><label>weapon</label></td>
+          <td><input class="name" type="text" name="data.weapstats.weapstat2.name" value="{{data.weapstats.weapstat2.name}}" data-dtype="text"></td>
+          <td><label>damage</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat2.damage" value="{{data.weapstats.weapstat2.damage}}" data-dtype="number"></td>
+          <td><label>edge</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat2.edge" value="{{data.weapstats.weapstat2.edge}}" data-dtype="text"></td>
+          <td><label>injury</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat2.injury" value="{{data.weapstats.weapstat2.injury}}" data-dtype="number"></td>
+          <td><label>enc</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat2.enc" value="{{data.weapstats.weapstat2.enc}}" data-dtype="text"></td>
+        </tr>
+        <tr>
+          <!-- weapon 3-->
+          <td><label>weapon</label></td>
+          <td><input class="name" type="text" name="data.weapstats.weapstat3.name" value="{{data.weapstats.weapstat3.name}}" data-dtype="text"></td>
+          <td><label>damage</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat3.damage" value="{{data.weapstats.weapstat3.damage}}" data-dtype="number"></td>
+          <td><label>edge</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat3.edge" value="{{data.weapstats.weapstat3.edge}}" data-dtype="text"></td>
+          <td><label>injury</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat3.injury" value="{{data.weapstats.weapstat3.injury}}" data-dtype="number"></td>
+          <td><label>enc</label></td>
+          <td><input class="other" type="text" name="data.weapstats.weapstat3.enc" value="{{data.weapstats.weapstat3.enc}}" data-dtype="text"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="other-gear" data-group="primary" data-tab="front">
+      <table>
+        <tr>
+          <td><label>armour</label></td>
+          <td><input class="name" type="text" name="data.gear.armname" value="{{data.gear.armname}}" data-dtype="text"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.armenc" value="{{data.gear.armenc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td><label>headgear</label></td>
+          <td><input class="name" type="text" name="data.gear.helmname" value="{{data.gear.helmname}}" data-dtype="text"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.helmenc" value="{{data.gear.helmenc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td><label>shield</label></td>
+          <td><input class="name" type="text" name="data.gear.shieldname" value="{{data.gear.shieldname}}" data-dtype="text"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.shieldenc" value="{{data.gear.shieldenc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input class="name" type="text" name="data.gear.misc1name" value="{{data.gear.misc1name}}" data-dtype="text" placeholder="misc"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.misc1enc" value="{{data.gear.misc1enc}}" data-dtype="number"/></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input class="name" type="text" name="data.gear.misc2name" value="{{data.gear.misc2name}}" data-dtype="text" placeholder="misc"/></td>
+          <td><label>enc</label></td>
+          <td><input class="enc" type="text" name="data.gear.misc2enc" value="{{data.gear.misc2enc}}" data-dtype="number"/></td>
+        </tr>
+      </table>
+    </div>
+    <div class="endhope-caption" data-group="primary" data-tab="front">
+      <label>Endurance<label>
+      <label>Hope</label>
+    </div>
+    <div class="end-hope" data-group="primary" data-tab="front">
+      <input class="end-value" type="text" name="data.endurance.value" value="{{data.endurance.value}}" data-dtype="number"/>
+      <label class="end-max">Max</label>
+      <input class="end-max" type="text" name="data.endurance.max" value="{{data.endurance.max}}" data-dtype="number"/>
+      <label class="tot-enc">Total<br>Encumbrance</label>
+      <input class="tot-enc" type="text" name="data.gear.totenc" value="{{data.gear.totenc}}" data-dtype="number"/>
+      <label class="trav-fatigue">Travel<br>Fatigue</label>
+      <input class="trav-fatigue" type="text" name="data.gear.travfatigue" value="{{data.gear.travfatigue}}" data-dtype="number"/>
+      <img src="systems/torrpg/styles/diamond_4_circles.png" alt="circles" height="110" width="110">
+      <input class="hope-value" type="text" name="data.hope.value" value="{{data.hope.value}}" data-dtype="number"/>
+      <label class="hope-max">Max</label>
+      <input class="hope-max" type="text" name="data.hope.max" value="{{data.hope.max}}" data-dtype="number"/>
+      <img class="hope" src="systems/torrpg/styles/diamond_4_circles.png" alt="circles" height="110" width="110">
+      <label class="tot-shad">Total<br>Shadow</label>
+      <input class="tot-shad" type="text" name="data.hope.totshad" value="{{data.hope.totshad}}" data-dtype="number"/>
+      <label class="temp-shad">Temp<br>Shadow</label>
+      <input class="temp-shad" type="text" name="data.hope.tempshad" value="{{data.hope.tempshad}}" data-dtype="number"/>
+    </div>
+
+    <div data-group="primary" data-tab="front">
+      <table class="conditions">
+        <tr>
+          <td><label>Weary</label></td>
+          <td><input type="checkbox" name="data.weary" {{checked actor.data.weary}}></td>
+        </tr>
+        <tr>
+          <td><label>Miserable</label></td>
+          <td><input type="checkbox" name="data.miserable" {{checked actor.data.miserable}}></td>
+        </tr>
+        <tr>
+          <td><label>Wounded</label></td>
+          <td><input type="checkbox" name="data.wounded" {{checked actor.data.wounded}}></td>
+        </tr>
+      </table>
+    </div>
+  </div>  
+
+  <div class="tab back" data-group="primary" data-tab="back">
+    <div  data-group="primary" data-tab="back">
+      <label>back tab</label>
+    </div>
+  </div>
+  </section>
 </form>

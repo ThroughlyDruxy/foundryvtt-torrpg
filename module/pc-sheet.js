@@ -11,7 +11,7 @@ export class ActorSheetTORRPG extends ActorSheet {
   	  template: "systems/torrpg/templates/pc-sheet.html",
       width: 800,
       height: 900,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "front"}],
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "back"}],
       dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
