@@ -156,7 +156,8 @@
       "standlive": "",
       "culbless": "",
       "calling": "",
-      "shadweak": ""
+      "shadweak": "",
+      "background": ""
     },
     "abilities": {
       "body": {
@@ -329,7 +330,33 @@
     "advPointsTot": 0,
     "treasure": 0,
     "standing": 0,
-    "permshad": 0
+    "permshad": 0,
+    "companyRoles": {
+      "guide": {
+        "name": "Guide",
+        "value": ""
+      },
+      "scout": {
+        "name": "Scout",
+        "value": ""
+      },
+      "huntsman": {
+        "name": "Huntsman",
+        "value": ""
+      },
+      "lookout": {
+        "name": "Look-out Man",
+        "value": ""
+      },
+      "focus": {
+        "name": "Fellowship Focus",
+        "value": ""
+      }
+    },
+    "fellowshipPhase": {
+      "sanctuaries": "",
+      "patron": ""
+    }
   },
   "enemy": {
     "templates": [
