@@ -588,3 +588,35 @@ Back tab stuff for PC sheet
   position: relative;
   left: 120px;
 }
+.editor {
+  border: 1px solid black;
+  height: 150px;
+}
+.torrpg .back .company-roles {
+  border-width: 0px;
+}
+.torrpg .back .company-roles th {
+  text-align: left;
+  width: 150px;
+}
+.torrpg .back .company-roles input {
+  border-width: 0px;
+  border-bottom: 1px solid black;
+}
+.torrpg .back .fellowshipPhase {
+  border-width: 0px;
+}
+.torrpg .back .fellowshipPhase th {
+  text-align: left;
+  width: 150px;
+}
+.torrpg .back .fellowshipPhase input {
+  border-width: 0px;
+  border-bottom: 1px solid black;
+}
+.torrpg .back .cat-header-full {
+  margin-top: 15px;
+}
+.torrpg .back .taleYears {
+  height: 200px;
+}

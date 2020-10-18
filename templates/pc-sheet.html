@@ -309,7 +309,7 @@
       </table>
     </div>
 
-    <div class="other-gear" data-group="primary" data-tab="front">
+    <div class="other-gear">
       <table>
         <tr>
           <td><label>armour</label></td>
@@ -341,11 +341,11 @@
         </tr>
       </table>
     </div>
-    <div class="endhope-caption" data-group="primary" data-tab="front">
+    <div class="endhope-caption">
       <label>Endurance<label>
       <label>Hope</label>
     </div>
-    <div class="end-hope" data-group="primary" data-tab="front">
+    <div class="end-hope">
       <input class="end-value" type="text" name="data.endurance.value" value="{{data.endurance.value}}" data-dtype="number"/>
       <label class="end-max">Max</label>
       <input class="end-max" type="text" name="data.endurance.max" value="{{data.endurance.max}}" data-dtype="number"/>
@@ -364,7 +364,7 @@
       <input class="temp-shad" type="text" name="data.hope.tempshad" value="{{data.hope.tempshad}}" data-dtype="number"/>
     </div>
 
-    <div data-group="primary" data-tab="front">
+    <div>
       <table class="conditions">
         <tr>
           <td><label>Weary</label></td>
@@ -383,7 +383,7 @@
   </div>  
 
 
-  {{!-- Backside Tab --}}
+    {{!-- Backside Tab --}}
     <div class="tab back" data-group="primary" data-tab="back">
       
       <div data-group="primary" data-tab="back">
@@ -406,21 +406,41 @@
           <input class="ps" type="text" name="data.permshad" value="{{data.permshad}}" data-dtype="number"/>
           <img class="ps" src="systems/torrpg/styles/diamond_circle.png" alt="diamond_circle" height="90" width="90">
         </div>
-       
-
-
-
+        <div>
+          <h2 class="cat-header-full">- Background -</h2>
+          <div class="background-bio">
+            {{editor content=data.details.background target="data.details.background" button=true owner=owner editable=editable}}
+          </div>
+          <h2 class="cat-header-full">- Company -</h2>
+          <div>
+            <table class="company-roles">
+              {{#each data.companyRoles as |companyRoles cR|}}
+              <tr>
+                <th><label>{{companyRoles.name}}</label></th>
+                <td><input type="text" name="data.companyRoles.{{cR}}.value" value="{{companyRoles.value}}" data-dtype="text"></td>
+              </tr>
+              {{/each}}
+            </table>
+          </div>
+          <div>
+            <h2 class="cat-header-full">- Fellowship Phase -</h2>
+            <table class="fellowshipPhase">
+              <tr>
+                <th><label>Sanctuaries</label></th>
+                <td><input type="text" name="data.fellowshipPhase.sanctuaries" value="{{data.fellowshipPhase.sanctuaries}}" data-dtype="text"/></td>
+              </tr>
+              <tr>
+                <th><label>Patrons</label></th>
+                <td><input type="text" name="data.fellowshipPhase.patron" value="{{data.fellowshipPhase.patron}}" data-dtype="text"/></td>
+              </tr>
+            </table>
+          </div>
+          <div class="taleYears">
+            <h2 class="cat-header-full">- Tale of Years -</h2>
+            {{editor content=data.taleOfYears target="data.taleOfYears" button=true owner=owner editable=editable}}
+          </div>
+        </div>
       </div>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     </div>
   </section>
 </form>
